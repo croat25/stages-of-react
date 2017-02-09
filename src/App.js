@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import styled from 'styled-components';
 //import image from 'from name of image'
 import './App.css';
-
+import { Link } from 'react-router';
 
 const Title=styled.h1`
 
@@ -66,7 +66,7 @@ class App extends Component {
     }));
   }
 
-  
+
   render() {
     return (
       <div className="App">
@@ -94,6 +94,13 @@ class App extends Component {
       <button onClick={this.handleClick}>
         {this.state.isToggleOn ? 'ON' : 'OFF'}
       </button>
+      <div>
+        <h1>React Router Tutorial</h1>
+        <ul role="nav">
+          <button  className="btn btn-block btn-primary"><Link to="/about">About</Link></button>
+          <button  className="btn btn-block btn-primary"><Link to="/repos">Repos</Link></button>
+        </ul>
+      </div>
       </div>
     );
   }
