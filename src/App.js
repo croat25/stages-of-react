@@ -56,13 +56,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {date: new Date()};
-  this.handleClick = this.handleClick.bind(this);
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
   }
+
   handleClick() {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
   }
+
+  
   render() {
     return (
       <div className="App">
@@ -90,7 +94,6 @@ class App extends Component {
       <button onClick={this.handleClick}>
         {this.state.isToggleOn ? 'ON' : 'OFF'}
       </button>
-
       </div>
     );
   }
